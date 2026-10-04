@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Veneno : BaseAbility
 {
-    public override string AbilityName { get; set; } = "Veneno";
+    public override string AbilityName { get;} = "Veneno";
 
     public override void Execute()
     {

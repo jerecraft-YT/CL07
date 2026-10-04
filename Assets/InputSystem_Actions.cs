@@ -102,51 +102,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Ability1"",
-                    ""type"": ""Button"",
-                    ""id"": ""7c819de1-5920-4368-b073-f7d12a7ccb00"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ability2"",
-                    ""type"": ""Button"",
-                    ""id"": ""688dfa1b-b30d-4709-97da-cf0dd2d8dd19"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ability3"",
-                    ""type"": ""Button"",
-                    ""id"": ""c6562e9c-47a2-485f-b20c-31c2eb3f01c6"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ability4"",
-                    ""type"": ""Button"",
-                    ""id"": ""3ce7e9e0-7918-4cc3-a770-fdee60cc7e1e"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ability5"",
-                    ""type"": ""Button"",
-                    ""id"": ""2b08fd05-e1b9-4e86-8c23-7444f4125cfc"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Cast"",
                     ""type"": ""Button"",
                     ""id"": ""a1d3a8a5-f2d7-42ef-ace7-ce00d660883c"",
@@ -154,6 +109,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""9b8e2e80-4679-4e64-8a2c-6486c825e795"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""type"": ""Value"",
+                    ""id"": ""5544c202-d61e-426a-86be-035404e2ed50"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -291,67 +264,34 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1f4ce55a-38dc-45ab-8aaa-705ed810d985"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Ability1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d2299ced-6154-4557-b2b2-71a9fcc46939"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Ability2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3dd65c5b-5929-4489-bd30-ce4e6d8f6c76"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Ability3"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""337c572c-1971-49fb-a01a-c0a980378aad"",
-                    ""path"": ""<Keyboard>/4"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Ability4"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0bbcbed2-e443-4183-bdab-a4a458c30def"",
-                    ""path"": ""<Keyboard>/5"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Ability5"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""d7303173-2c70-4186-b672-5253a84e0707"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Cast"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c55c2bb-7148-4999-8a09-5731da4c5d00"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a287ed3f-81bd-47e6-b53e-5d95953bdf35"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Mouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -940,12 +880,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Ability1 = m_Player.FindAction("Ability1", throwIfNotFound: true);
-        m_Player_Ability2 = m_Player.FindAction("Ability2", throwIfNotFound: true);
-        m_Player_Ability3 = m_Player.FindAction("Ability3", throwIfNotFound: true);
-        m_Player_Ability4 = m_Player.FindAction("Ability4", throwIfNotFound: true);
-        m_Player_Ability5 = m_Player.FindAction("Ability5", throwIfNotFound: true);
         m_Player_Cast = m_Player.FindAction("Cast", throwIfNotFound: true);
+        m_Player_Scroll = m_Player.FindAction("Scroll", throwIfNotFound: true);
+        m_Player_Mouse = m_Player.FindAction("Mouse", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1040,12 +977,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Ability1;
-    private readonly InputAction m_Player_Ability2;
-    private readonly InputAction m_Player_Ability3;
-    private readonly InputAction m_Player_Ability4;
-    private readonly InputAction m_Player_Ability5;
     private readonly InputAction m_Player_Cast;
+    private readonly InputAction m_Player_Scroll;
+    private readonly InputAction m_Player_Mouse;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1062,29 +996,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Player_Move;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Ability1".
-        /// </summary>
-        public InputAction @Ability1 => m_Wrapper.m_Player_Ability1;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Ability2".
-        /// </summary>
-        public InputAction @Ability2 => m_Wrapper.m_Player_Ability2;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Ability3".
-        /// </summary>
-        public InputAction @Ability3 => m_Wrapper.m_Player_Ability3;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Ability4".
-        /// </summary>
-        public InputAction @Ability4 => m_Wrapper.m_Player_Ability4;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Ability5".
-        /// </summary>
-        public InputAction @Ability5 => m_Wrapper.m_Player_Ability5;
-        /// <summary>
         /// Provides access to the underlying input action "Player/Cast".
         /// </summary>
         public InputAction @Cast => m_Wrapper.m_Player_Cast;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Scroll".
+        /// </summary>
+        public InputAction @Scroll => m_Wrapper.m_Player_Scroll;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Mouse".
+        /// </summary>
+        public InputAction @Mouse => m_Wrapper.m_Player_Mouse;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1114,24 +1036,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Ability1.started += instance.OnAbility1;
-            @Ability1.performed += instance.OnAbility1;
-            @Ability1.canceled += instance.OnAbility1;
-            @Ability2.started += instance.OnAbility2;
-            @Ability2.performed += instance.OnAbility2;
-            @Ability2.canceled += instance.OnAbility2;
-            @Ability3.started += instance.OnAbility3;
-            @Ability3.performed += instance.OnAbility3;
-            @Ability3.canceled += instance.OnAbility3;
-            @Ability4.started += instance.OnAbility4;
-            @Ability4.performed += instance.OnAbility4;
-            @Ability4.canceled += instance.OnAbility4;
-            @Ability5.started += instance.OnAbility5;
-            @Ability5.performed += instance.OnAbility5;
-            @Ability5.canceled += instance.OnAbility5;
             @Cast.started += instance.OnCast;
             @Cast.performed += instance.OnCast;
             @Cast.canceled += instance.OnCast;
+            @Scroll.started += instance.OnScroll;
+            @Scroll.performed += instance.OnScroll;
+            @Scroll.canceled += instance.OnScroll;
+            @Mouse.started += instance.OnMouse;
+            @Mouse.performed += instance.OnMouse;
+            @Mouse.canceled += instance.OnMouse;
         }
 
         /// <summary>
@@ -1146,24 +1059,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Ability1.started -= instance.OnAbility1;
-            @Ability1.performed -= instance.OnAbility1;
-            @Ability1.canceled -= instance.OnAbility1;
-            @Ability2.started -= instance.OnAbility2;
-            @Ability2.performed -= instance.OnAbility2;
-            @Ability2.canceled -= instance.OnAbility2;
-            @Ability3.started -= instance.OnAbility3;
-            @Ability3.performed -= instance.OnAbility3;
-            @Ability3.canceled -= instance.OnAbility3;
-            @Ability4.started -= instance.OnAbility4;
-            @Ability4.performed -= instance.OnAbility4;
-            @Ability4.canceled -= instance.OnAbility4;
-            @Ability5.started -= instance.OnAbility5;
-            @Ability5.performed -= instance.OnAbility5;
-            @Ability5.canceled -= instance.OnAbility5;
             @Cast.started -= instance.OnCast;
             @Cast.performed -= instance.OnCast;
             @Cast.canceled -= instance.OnCast;
+            @Scroll.started -= instance.OnScroll;
+            @Scroll.performed -= instance.OnScroll;
+            @Scroll.canceled -= instance.OnScroll;
+            @Mouse.started -= instance.OnMouse;
+            @Mouse.performed -= instance.OnMouse;
+            @Mouse.canceled -= instance.OnMouse;
         }
 
         /// <summary>
@@ -1472,47 +1376,26 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Ability1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAbility1(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Ability2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAbility2(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Ability3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAbility3(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Ability4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAbility4(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Ability5" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAbility5(InputAction.CallbackContext context);
-        /// <summary>
         /// Method invoked when associated input action "Cast" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCast(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Scroll" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnScroll(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Mouse" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMouse(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

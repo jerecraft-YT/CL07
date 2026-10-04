@@ -3,11 +3,11 @@ using UnityEngine;
 
 public abstract class BaseAbility : MonoBehaviour
 {
-    public Projectile proyectilePrefab;
-    public Transform firePoint;
-    public MMF_Player castFeedback;
+    [SerializeField] private Projectile proyectilePrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private MMF_Player castFeedback;
 
-    public abstract string AbilityName { get; set; }
+    public abstract string AbilityName { get;}
     public abstract void Execute();
     protected virtual void PlayFeedback()
     {
@@ -33,5 +33,6 @@ public abstract class BaseAbility : MonoBehaviour
         projectile.speed = speed;
         projectile.duration = duration;
         projectile.effect = effect;
+        projectile.transform.up = firePoint.up;
     }
 }

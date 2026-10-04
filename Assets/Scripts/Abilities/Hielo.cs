@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Hielo : BaseAbility
 {
-    public override string AbilityName { get; set; } = "Fuego";
+    public override string AbilityName { get;} = "Hielo";
 
     public override void Execute()
     {

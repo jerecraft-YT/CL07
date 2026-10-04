@@ -1,12 +1,19 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private BaseAbility[] _abilities;
-    [SerializeField] private BaseAbility _current;
+    //esto solo se usa para guardar una referencia al prefab
+    [SerializeField] private BaseAbility[] _abilitiesPrefabs;
+    //esto usara el jugador para guardar la referencia a la habilidad que se instancio en el awake
+    private BaseAbility[] _abilities;
+    private BaseAbility _current;
+    private int _currentAbilitieIndex = -1;
+
+    [SerializeField] private float _speed = 5f;
+    private Vector2 dirMove;
+    private Vector2 aimDirection;
 
     private InputSystem_Actions inputs;
 
@@ -15,6 +22,22 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         inputs = new();
+
+        SetAbilitiesArray();
+    }
+
+    private void SetAbilitiesArray()
+    {
+        _abilities = new BaseAbility[_abilitiesPrefabs.Length];
+
+        for (int i = 0; i < _abilitiesPrefabs.Length; i++)
+        {
+            BaseAbility ability = Instantiate(_abilitiesPrefabs[i], transform);
+            _abilities[i] = ability;
+        }
+
+        _currentAbilitieIndex = 0;
+        SelectAbilitie();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,7 +49,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        transform.position += _speed * (Vector3)dirMove * Time.deltaTime;
     }
 
 
@@ -34,11 +57,12 @@ public class Player : MonoBehaviour
     {
         inputs.Enable();
 
-        inputs.Player.Ability1.performed += SelectAbility1;
-        inputs.Player.Ability1.performed += SelectAbility2;
-        inputs.Player.Ability1.performed += SelectAbility3;
-        inputs.Player.Ability1.performed += SelectAbility4;
-        inputs.Player.Ability1.performed += SelectAbility5;
+        inputs.Player.Scroll.performed += OnScroll;
+
+        inputs.Player.Move.performed += OnMove;
+        inputs.Player.Move.canceled += OnMove;
+
+        inputs.Player.Mouse.performed += OnMouseMove;
 
         inputs.Player.Cast.performed += OnCast;
     }
@@ -47,54 +71,72 @@ public class Player : MonoBehaviour
     {
         inputs.Disable();
 
-        inputs.Player.Ability1.performed -= SelectAbility1;
-        inputs.Player.Ability1.performed -= SelectAbility2;
-        inputs.Player.Ability1.performed -= SelectAbility3;
-        inputs.Player.Ability1.performed -= SelectAbility4;
-        inputs.Player.Ability1.performed -= SelectAbility5;
+        inputs.Player.Scroll.performed -= OnScroll;
+
+        inputs.Player.Move.performed -= OnMove;
+        inputs.Player.Move.canceled -= OnMove;
+
+        inputs.Player.Mouse.performed -= OnMouseMove;
 
         inputs.Player.Cast.performed -= OnCast;
+    }
+    private void OnMove(InputAction.CallbackContext context)
+    {
+        dirMove = context.ReadValue<Vector2>();
+    }
+
+    private void OnMouseMove(InputAction.CallbackContext context)
+    {
+        aimDirection = (Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()) - transform.position).normalized;
+    }
+
+    private void OnScroll(InputAction.CallbackContext ctx)
+    {
+        Vector2 scrollValue = ctx.ReadValue<Vector2>();
+
+        _currentAbilitieIndex += (int)scrollValue.y;
+
+        SelectAbilitie();
     }
 
     private void OnCast(InputAction.CallbackContext context)
     {
-        if (_current == null) return;
+        if (_current == null)
+        {
+            Debug.LogWarning("no se ha seleccionado ninguna habilidad");
+            return;
+        }
 
+        _current.transform.up = aimDirection;
         _current.Execute();
-        _current = null;
+        //_current = null;
     }
 
     #region Ability Selector
 
-    private void SelectAbility5(InputAction.CallbackContext context)
+    public void SelectAbilitie()
     {
-        Select(4);
-    }
+        if (_abilities.Length == 0)
+        {
+            Debug.LogWarning("no hay habilidades disponibles");
+            return;
+        }
 
-    private void SelectAbility4(InputAction.CallbackContext context)
-    {
-        Select(3);
-    }
+        if (_currentAbilitieIndex < 0)
+        {
+            _currentAbilitieIndex = _abilities.Length - 1;
+        }
+        else if (_currentAbilitieIndex >= _abilities.Length)
+        {
+            _currentAbilitieIndex = 0;
+        }
 
-    private void SelectAbility3(InputAction.CallbackContext context)
-    {
-        Select(2);
-    }
+        _current = _abilities[_currentAbilitieIndex];
 
-    private void SelectAbility2(InputAction.CallbackContext context)
-    {
-        Select(1);
-    }
-
-    private void SelectAbility1(InputAction.CallbackContext context)
-    {
-        Select(0);
-    }
-
-    public void Select(int index)
-    {
-        _current = _abilities[index];
+        Debug.Log("se selecciono la habilidad: " + _currentAbilitieIndex);
     }
 
     #endregion
+
+    public BaseAbility CurrentAbility => _current;
 }
