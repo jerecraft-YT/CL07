@@ -15478,8 +15478,6 @@ MonoBehaviour:
   - {fileID: 5665644379249190404, guid: 09aae8547727c734281f2e85d1ee4278, type: 3}
   - {fileID: 3789643000687792721, guid: 9b6a96001f69fd44bb83b39cc62f0c3c, type: 3}
   - {fileID: 1343071769993764084, guid: 2564efce70896f8488e22e1dff1b7614, type: 3}
-  _current: {fileID: 0}
-  _currentAbilitieIndex: -1
   _speed: 5
 --- !u!4 &454132219
 Transform:
